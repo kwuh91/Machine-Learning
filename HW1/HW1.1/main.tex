@@ -4,6 +4,8 @@
 
 \geometry{a4paper}
 
+\raggedright  % Add this line after the preamble
+
 \begin{document}
 
 \newgeometry{left=25mm, right=25mm, top=20mm, bottom=20mm}
@@ -60,7 +62,7 @@
 % --------------------------------------START--------------------------------------
 
 \section*{Задание}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{section}{Задание}
+\addcontentsline{toc}{section}{\protect\numberline{}Задание}
 
 \begin{enumerate}
     \item Описать исходные данные, привести примеры задач, в которых могут возникнуть подобные исходные данные, описать используемый метод решения задачи и обосновать его применение;
@@ -73,7 +75,7 @@
 \end{enumerate}
 
 \section*{Исходные данные}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{section}{Исходные данные}
+\addcontentsline{toc}{section}{\protect\numberline{}Исходные данные}
 
 \begin{table}[h!]
     \centering
@@ -91,10 +93,10 @@
 \end{table}
 
 \section*{{Ход решения}}
-\addcontentsline{toc}{section}{Ход решения}
+\addcontentsline{toc}{section}{\protect\numberline{}Ход решения}
 
 \subsection*{{Часть 1}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 1}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 1}
 
 \vspace{-10pt} Описать исходные данные, привести примеры задач, в которых могут возникнуть 
 подобные исходные данные, описать используемый метод решения задачи и обосновать его 
@@ -108,10 +110,26 @@
 Используемый метод решения задачи – Метод наименьших квадратов (МНК).\\
 
 \subsubsection*{{Описание работы МНК}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Описание работы МНК}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Описание работы МНК}
+
+Метод наименьших квадратов (МНК) — это стандартный подход для нахождения наилучшей 
+аппроксимации данных с помощью функции, минимизирующей функционал ошибки.
+
+Функционал ошибки представляет из себя сумму квадратов отклонений
+$$S(a) = \sum\limits_{i=1}^{m}\left[y_i - f(x_i,\ a)\right] \longrightarrow \min$$
+
+МНК имеет так же матричную формулировку
+$$S(a) = ||Y - Xa||^2 \longrightarrow \min,$$
+
+где:
+\begin{itemize}
+    \item $X$ - матрица признаков размером $m \times n$ ($m$ - число наблюдений, $n$ - число признаков),
+    \item $Y$ - вектор наблюдаемых значений размером $m \times 1$,
+    \item $a$ - вектор параметров размером $n \times 1$
+\end{itemize}
 
 \subsubsection*{{Обоснование применения МНК}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Обоснование применения МНК}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Обоснование применения МНК}
 
 Метод наименьших квадратов широко применяется в различных областях науки и практики, 
 и используется для подбора зависимости, которые лучше всего соответствуют набору данных. \\
@@ -127,7 +145,7 @@
 \end{itemize}
 
 \subsubsection*{{Примеры задач}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Примеры задач}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Примеры задач}
 
 Примеры задач, в которых могут возникнуть подобные исходные данные и может применяться МНК: 
 
@@ -142,14 +160,14 @@
 \newpage
 
 \subsection*{{Часть 2}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 2}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 2}
 
 Проанализировать исходные данные. Изобразить исходные данные графически при помощи 
 библиотеки matplotlib, привести код для построения значений. Подобрать вид функции, 
 наилучшим образом описывающие исходные данные, обосновать выбор именно этого вида функции; \\
 
 \subsubsection*{{Построение исходных графиков}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Построение исходных графиков}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Построение исходных графиков}
 
 Изобразим исходные данные графически при помощи библиотеки matplotlib. \\
 Для начала подключим все необходимые библиотеки:
@@ -312,7 +330,7 @@ buildClassicBar('initial_regular_plot',
 \end{center}
 
 \subsubsection*{{Подбор вида функции}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Подбор вида функции}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Подбор вида функции}
 
 Исходя из вида данных можно выдвинуть несколько предположений о виде функции. Наблюдая за 
 интерпретацией данных на графике \high{Scatter Plot} можно сделать предположение, что данные 
@@ -386,7 +404,7 @@ buildBar('Plot_Hand_Approximation',
 \end{center}
 
 \subsection*{{Часть 3}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 3}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 3}
 
 Решить задачу аналитически. Описать нахождение коэффициентов выбранной функции методом 
 наименьших квадратов вручную, с построением промежуточных таблиц значений. Полученный 
@@ -394,7 +412,7 @@ buildBar('Plot_Hand_Approximation',
 значений; (Аналитическое решение можно выполнить от руки, приложить в отчет отсканированные фото)
 
 \subsubsection*{{Линейная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Линейная регрессия}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Линейная регрессия}
 
 Аналитически выразим формулы для коэффициентов парной линейной регрессии методом МНК.
 
@@ -484,7 +502,7 @@ buildBar('Linear_Regression_Analytical',
 Что очень похоже на график, подобранный вручную.
 
 \subsubsection*{{Полиномиальная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Полиномиальная регрессия}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Полиномиальная регрессия}
 
 Теперь аналитически выразим формулы для коэффициентов полиномиальной регрессии методом МНК в общем 
 случае.
@@ -629,14 +647,14 @@ buildBar('Polynomial_Regression_Analytical',
 Из графика видно, что данная модель лучше аппроксимирует данные, нежели линейная.
 
 \subsection*{{Часть 4}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 4}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 4}
 
 Решить задачу на языке python с использованием библиотеки numpy, привести код, 
 привести результат решения. Полученный результат изобразить графически при помощи 
 библиотеки matplotlib, привести код для построения значений;
 
 \subsubsection*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Описание применяемых методов библиотеки}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Описание применяемых методов библиотеки}
 
 Воспользуемся следующими методами библиотеки \high{numpy}:
 
@@ -650,10 +668,10 @@ buildBar('Polynomial_Regression_Analytical',
 \end{itemize}
 
 \subsubsection*{{Описание хода решения}}
-\addcontentsline{toc}{subsubsection}{Описание хода решения}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Описание хода решения}
 
 \paragraph*{{Линейная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{paragraph}{Линейная регрессия}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Линейная регрессия}
 
 Воспользуемся матричной формой решения:
 
@@ -707,7 +725,7 @@ buildBar('Linear_Regression_numpy',
 Результаты получились аналогичными тем, что были найдены аналитически.
 
 \paragraph*{{Полиномиальная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{paragraph}{Полиномиальная регрессия}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Полиномиальная регрессия}
 
 Реализуем нахождение коэффициентов модели при помощи библиотеки numpy:
 
@@ -766,65 +784,73 @@ buildBar('Polynomial_Regression_numpy',
 Результаты также получились аналогичными тем, что были найдены аналитически.
 
 \subsection*{{Часть 5}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 5}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 5}
 
 Решить задачу на языке python с использованием библиотеки scipy и matplotlib. 
 Полученный результат изобразить графически при помощи библиотеки matplotlib, 
 привести код для построения значений;
 
-\subsubsection*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Описание применяемых методов библиотеки}
-
-Воспользуемся следующими методами библиотеки \high{scipy}:
-
-\begin{itemize}
-    \item sp.linalg.inv - для нахождения обратной матрицы
-\end{itemize}
-
 \subsubsection*{{Описание хода решения}}
-\addcontentsline{toc}{subsubsection}{Описание хода решения}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Описание хода решения}
 
-\paragraph*{{Линейная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{paragraph}{Линейная регрессия}
-
-Воспользуемся матричной формой решения:
-
-\begin{equation*}
-    \beta = (X^T X)^{-1} X^T Y
-\end{equation*}
-
-Реализуем нахождение коэффициентов модели при помощи библиотеки scipy:
+Для начала заведем две вспомогательные функции:
 
 \begin{center}
     \begin{lstlisting}[language=Python]
-X = np.array([np.ones(n_), np.array(x_values_)]).T
-Y = np.array(y_values_).T
-linear_scipy_beta = sp.linalg.inv((X.T @ X)) @ X.T @ Y
+linear_scipy_func = lambda x, intercept, slope: intercept + slope * x
 
-linear_scipy_beta
+polynomial_scipy_func = lambda x, coeff: coeff[0] + \
+                                         coeff[1] * x + \
+                                         coeff[2] * x**2 + \
+                                         coeff[3] * x**3
+    \end{lstlisting}
+\end{center}
+
+\subsubsection*{{Линейная регрессия с помощью scipy.stats.linregress}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Линейная регрессия с помощью scipy.stats.linregress}
+\vspace{-30pt}\paragraph*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание применяемых методов библиотеки}
+
+Воспользуемся методом \textbf{linregress} модуля \textbf{stats} библиотеки \textbf{scipy} для 
+нахождения линейной регрессии:
+
+\definecolor{mygray}{rgb}{0.85, 0.85, 0.85}
+\begin{tcolorbox}[colback=mygray, boxrule=0pt, arc=0pt]
+    \textbf{linregress(}x, y=None, alternative='two-sided'\textbf{)} \\
+    Находит линейную регрессию методом наименьших квадратов для 
+    двух наборов измерений.
+\end{tcolorbox}
+
+\paragraph*{{Описание хода решения}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание хода решения}
+
+Вызовем метод на заданных данных:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+linregressResult = sp.stats.linregress(x=x_values_, y=y_values_)
     \end{lstlisting}
 \end{center}
 
 Получим:
 
 \begin{equation*}
-    \beta_0 \approx 2.646 \qquad \beta_1 \approx 0.3671
+    \beta_0 \approx 2.646190 \qquad \beta_1 \approx 0.36714
 \end{equation*}
 
 Построим график:
 
 \begin{center}
     \begin{lstlisting}[language=Python]
-linear_scipy_func = lambda x: linear_scipy_beta[0] + linear_scipy_beta[1] * x
-
 new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
-new_y_values = linear_scipy_func(new_x_values)
+new_y_values = linear_scipy_func(new_x_values, linregressResult.intercept, 
+                                               linregressResult.slope)
 
-y_values_linear_scipy = new_y_values
+y_values_linear_scipy_linregress = new_y_values
 
-buildBar('Linear_Regression_scipy', 
+buildBar('Linear_Regression_scipy_linregress', 
          '$\\hat{y}$', 
-         'Linear Regression (using OLS) with scipy', 
+         'Linear Regression (using OLS) with scipy (linregress)', 
          x_values_, 
          y_values_, 
          new_x_values, 
@@ -833,57 +859,123 @@ buildBar('Linear_Regression_scipy',
 \end{center}
 
 \begin{center}
-    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Linear_Regression_scipy} \\
+    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Linear_Regression_scipy_linregress} \\
 \end{center}
 
-Результаты получились аналогичными тем, что были найдены аналитически и при помощи \high{numpy}.
+Результаты получились очень похожими на те, что были найдены аналитически и при помощи \high{numpy}.
 
-\paragraph*{{Полиномиальная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{paragraph}{Полиномиальная регрессия}
+\subsubsection*{{Линейная регрессия с помощью scipy.stats.least\_squares}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Линейная регрессия с помощью scipy.stats.least\_squares}
+\vspace{-30pt}\paragraph*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание применяемых методов библиотеки}
 
-Реализуем нахождение коэффициентов модели при помощи библиотеки scipy:
+Воспользуемся методом \textbf{least\_squares} модуля \textbf{optimize} библиотеки \textbf{scipy} для 
+нахождения линейной регрессии:
+
+\definecolor{mygray}{rgb}{0.85, 0.85, 0.85}
+\begin{tcolorbox}[colback=mygray, boxrule=0pt, arc=0pt]
+    \textbf{least\_squares(}fun, x0, jac='2-point', bounds=(-inf, inf), 
+    method='trf', ftol=1e-08, xtol=1e-08, gtol=1e-08, x\_scale=1.0, loss='linear', 
+    f\_scale=1.0, diff\_step=None, tr\_solver=None, tr\_options=None, jac\_sparsity=None, 
+    max\_nfev=None, verbose=0, args=(), kwargs=None\textbf{)} \\
+    Решает нелинейную задачу наименьших квадратов с огрнаичениями на переменные.
+\end{tcolorbox}
+
+\paragraph*{{Описание хода решения}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание хода решения}
+
+Вызовем метод на заданных данных:
 
 \begin{center}
     \begin{lstlisting}[language=Python]
-X = np.array([np.ones(n_), 
-              np.array(x_values_), 
-              np.array(x_values_)**2, 
-              np.array(x_values_)**3]).T
-Y = np.array(y_values_).T
-polynomial_scipy_beta = sp.linalg.inv((X.T @ X)) @ X.T @ Y
+def func(beta, x, y):
+    return beta[0] + beta[1] * x - y
 
-polynomial_scipy_beta
+beta0 = np.array([1.0, 1.0])
+
+res_linear_lsq = sp.optimize.least_squares(func, beta0, args=(np.array(x_values_), 
+                                                              np.array(y_values_)))
     \end{lstlisting}
 \end{center}
 
 Получим:
 
 \begin{equation*}
-    \begin{vmatrix}
-        0.5933036 \\
-        1.196875 \\
-        -0.0933036 \\
-        0.003125
-    \end{vmatrix}
+    \beta_0 \approx 2.646190 \qquad \beta_1 \approx 0.36714
 \end{equation*}
 
 Построим график:
 
 \begin{center}
     \begin{lstlisting}[language=Python]
-polynomial_scipy_func = lambda x: polynomial_scipy_beta[0] + \
-                                  polynomial_scipy_beta[1] * x + \
-                                  polynomial_scipy_beta[2] * x**2 + \
-                                  polynomial_scipy_beta[3] * x**3
-
 new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
-new_y_values = polynomial_scipy_func(new_x_values)
+new_y_values = linear_scipy_func(new_x_values, res_linear_lsq.x[0], res_linear_lsq.x[1])
 
-y_values_polynomial_scipy = new_y_values
+y_values_linear_scipy_least_squares = new_y_values
 
-buildBar('Polynomial_Regression_scipy', 
+buildBar('Linear_Regression_scipy_least_squares', 
          '$\\hat{y}$', 
-         'Polynomial regression (using OLS, n=3) with scipy', 
+         'Linear Regression (using OLS) with scipy (least_squares)', 
+         x_values_, 
+         y_values_,
+         new_x_values, 
+         new_y_values)
+    \end{lstlisting}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Linear_Regression_scipy_least_squares} \\
+\end{center}
+
+Результаты получились очень похожими на те, что были найдены аналитически и при помощи \high{numpy}.
+
+\subsubsection*{{Линейная регрессия с помощью scipy.stats.lstsq}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Линейная регрессия с помощью scipy.stats.lstsq}
+\vspace{-30pt}\paragraph*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание применяемых методов библиотеки}
+
+Воспользуемся методом \textbf{lstsq} модуля \textbf{linalg} библиотеки \textbf{scipy} для 
+нахождения линейной регрессии:
+
+\definecolor{mygray}{rgb}{0.85, 0.85, 0.85}
+\begin{tcolorbox}[colback=mygray, boxrule=0pt, arc=0pt]
+    \textbf{lstsq(}a, b, cond=None, overwrite\_a=False, overwrite\_b=False, check\_finite=True, 
+    lapack\_driver=None\textbf{)} \\
+    Находит решение матричного уравнения $Ax = b$ методом наименьших квадратов.
+\end{tcolorbox}
+
+\paragraph*{{Описание хода решения}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание хода решения}
+
+Вызовем метод на заданных данных:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+M = np.array([np.ones(n_), np.array(x_values_)]).T
+y = np.array(y_values_)
+
+p_linear, res, rnk, s = sp.linalg.lstsq(M, y)
+    \end{lstlisting}
+\end{center}
+
+Получим:
+
+\begin{equation*}
+    \beta_0 \approx 2.646190 \qquad \beta_1 \approx 0.36714
+\end{equation*}
+
+Построим график:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
+new_y_values = linear_scipy_func(new_x_values, p_linear[0], p_linear[1])
+
+y_values_linear_scipy_lstsq = new_y_values
+
+buildBar('Linear_Regression_scipy_lstsq', 
+         '$\\hat{y}$', 
+         'Linear Regression (using OLS) with scipy (lstsq)', 
          x_values_, 
          y_values_, 
          new_x_values, 
@@ -892,24 +984,328 @@ buildBar('Polynomial_Regression_scipy',
 \end{center}
 
 \begin{center}
-    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Polynomial_Regression_scipy} \\
+    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Linear_Regression_scipy_lstsq} \\
 \end{center}
 
-Результаты также получились аналогичными тем, что были найдены аналитически и при помощи \high{numpy}.
+Результаты получились очень похожими на те, что были найдены аналитически и при помощи \high{numpy}.
+
+\subsubsection*{{Линейная регрессия с помощью scipy.stats.lstsq}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Линейная регрессия с помощью scipy.stats.lstsq}
+\vspace{-30pt}\paragraph*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание применяемых методов библиотеки}
+
+Воспользуемся методом \textbf{lstsq} модуля \textbf{linalg} библиотеки \textbf{scipy} для 
+нахождения линейной регрессии:
+
+\definecolor{mygray}{rgb}{0.85, 0.85, 0.85}
+\begin{tcolorbox}[colback=mygray, boxrule=0pt, arc=0pt]
+    \textbf{lstsq(}a, b, cond=None, overwrite\_a=False, overwrite\_b=False, check\_finite=True, 
+    lapack\_driver=None\textbf{)} \\
+    Находит решение матричного уравнения $Ax = b$ методом наименьших квадратов.
+\end{tcolorbox}
+
+\paragraph*{{Описание хода решения}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание хода решения}
+
+Вызовем метод на заданных данных:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+M = np.array([np.ones(n_), np.array(x_values_)]).T
+y = np.array(y_values_)
+
+p_linear, res, rnk, s = sp.linalg.lstsq(M, y)
+    \end{lstlisting}
+\end{center}
+
+Получим:
+
+\begin{equation*}
+    \beta_0 \approx 2.646190 \qquad \beta_1 \approx 0.36714
+\end{equation*}
+
+Построим график:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
+new_y_values = linear_scipy_func(new_x_values, p_linear[0], p_linear[1])
+
+y_values_linear_scipy_lstsq = new_y_values
+
+buildBar('Linear_Regression_scipy_lstsq', 
+         '$\\hat{y}$', 
+         'Linear Regression (using OLS) with scipy (lstsq)', 
+         x_values_, 
+         y_values_, 
+         new_x_values, 
+         new_y_values)
+    \end{lstlisting}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Linear_Regression_scipy_lstsq} \\
+\end{center}
+
+Результаты получились очень похожими на те, что были найдены аналитически и при помощи \high{numpy}.
+
+\subsubsection*{{Полиномиальная регрессия с помощью scipy.optimize.least\_squares}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Полиномиальная регрессия с помощью scipy.optimize.least\_squares}
+\vspace{-30pt}\paragraph*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание применяемых методов библиотеки}
+
+Воспользуемся методом \textbf{least\_squares} модуля \textbf{optimize} библиотеки \textbf{scipy} для 
+нахождения полиномиальной регрессии.
+
+\paragraph*{{Описание хода решения}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание хода решения}
+
+Вызовем метод на заданных данных:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+def func(beta, x, y):
+    return beta[0] + beta[1] * x + beta[2] * x**2 + beta[3] * x**3 - y
+
+beta0 = np.array([1.0, 1.0, 1.0, 1.0])
+
+res_polynomial_lsq = sp.optimize.least_squares(func, beta0, args=(np.array(x_values_), np.array(y_values_)))
+    \end{lstlisting}
+\end{center}
+
+Получим:
+
+\begin{equation*}
+    0.59330357 \qquad  1.196875   \qquad -0.09330357 \qquad  0.003125
+\end{equation*}
+
+Построим график:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
+new_y_values = polynomial_scipy_func(new_x_values, res_polynomial_lsq.x)
+
+y_values_polynomial_scipy_least_squares = new_y_values
+
+buildBar('Polynomial_Regression_scipy_least_squares', 
+         '$\\hat{y}$', 
+         'Polynomial regression (using OLS, n=3) with scipy (least_squares)', 
+         x_values_, 
+         y_values_, 
+         new_x_values, 
+         new_y_values)
+    \end{lstlisting}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Polynomial_Regression_scipy_least_squares} \\
+\end{center}
+
+Результаты получились очень похожими на те, что были найдены аналитически и при помощи \high{numpy}.
+
+\subsubsection*{{Полиномиальная регрессия с помощью scipy.optimize.lstsq}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Полиномиальная регрессия с помощью scipy.optimize.lstsq}
+\vspace{-30pt}\paragraph*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание применяемых методов библиотеки}
+
+Воспользуемся методом \textbf{lstsq} модуля \textbf{optimize} библиотеки \textbf{scipy} для 
+нахождения полиномиальной регрессии.
+
+\paragraph*{{Описание хода решения}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Описание хода решения}
+
+Вызовем метод на заданных данных:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+M = np.array([np.ones(n_), np.array(x_values_), 
+                           np.array(x_values_)**2, 
+                           np.array(x_values_)**3]).T
+y = np.array(y_values_)
+
+p_polynomial, res, rnk, s = sp.linalg.lstsq(M, y)
+    \end{lstlisting}
+\end{center}
+
+Получим:
+
+\begin{equation*}
+    0.59330357 \qquad  1.196875   \qquad -0.09330357 \qquad  0.003125
+\end{equation*}
+
+Построим график:
+
+\begin{center}
+    \begin{lstlisting}[language=Python]
+new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
+new_y_values = polynomial_scipy_func(new_x_values, p_polynomial)
+
+y_values_polynomial_scipy_lstsq = new_y_values
+
+buildBar('Polynomial_Regression_scipy_lstsq', 
+         '$\\hat{y}$', 
+         'Polynomial regression (using OLS, n=3) with scipy (lstsq)', 
+         x_values_, 
+         y_values_, 
+         new_x_values, 
+         new_y_values)
+    \end{lstlisting}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Polynomial_Regression_scipy_lstsq} \\
+\end{center}
+
+Результаты получились очень похожими на те, что были найдены аналитически и при помощи \high{numpy}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \subsection*{{Часть 5}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+% \addcontentsline{toc}{subsection}{\protect\numberline{}Часть 5}
+
+% Решить задачу на языке python с использованием библиотеки scipy и matplotlib. 
+% Полученный результат изобразить графически при помощи библиотеки matplotlib, 
+% привести код для построения значений;
+
+% \subsubsection*{{Описание применяемых методов библиотеки}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+% \addcontentsline{toc}{subsubsection}{\protect\numberline{}Описание применяемых методов библиотеки}
+
+% Воспользуемся следующими методами библиотеки \high{scipy}:
+
+% \begin{itemize}
+%     \item sp.linalg.inv - для нахождения обратной матрицы
+% \end{itemize}
+
+% \subsubsection*{{Описание хода решения}}
+% \addcontentsline{toc}{subsubsection}{\protect\numberline{}Описание хода решения}
+
+% \paragraph*{{Линейная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+% \addcontentsline{toc}{paragraph}{\protect\numberline{}Линейная регрессия}
+
+% Воспользуемся матричной формой решения:
+
+% \begin{equation*}
+%     \beta = (X^T X)^{-1} X^T Y
+% \end{equation*}
+
+% Реализуем нахождение коэффициентов модели при помощи библиотеки scipy:
+
+% \begin{center}
+%     \begin{lstlisting}[language=Python]
+% X = np.array([np.ones(n_), np.array(x_values_)]).T
+% Y = np.array(y_values_).T
+% linear_scipy_beta = sp.linalg.inv((X.T @ X)) @ X.T @ Y
+
+% linear_scipy_beta
+%     \end{lstlisting}
+% \end{center}
+
+% Получим:
+
+% \begin{equation*}
+%     \beta_0 \approx 2.646 \qquad \beta_1 \approx 0.3671
+% \end{equation*}
+
+% Построим график:
+
+% \begin{center}
+%     \begin{lstlisting}[language=Python]
+% linear_scipy_func = lambda x: linear_scipy_beta[0] + linear_scipy_beta[1] * x
+
+% new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
+% new_y_values = linear_scipy_func(new_x_values)
+
+% y_values_linear_scipy = new_y_values
+
+% buildBar('Linear_Regression_scipy', 
+%          '$\\hat{y}$', 
+%          'Linear Regression (using OLS) with scipy', 
+%          x_values_, 
+%          y_values_, 
+%          new_x_values, 
+%          new_y_values)
+%     \end{lstlisting}
+% \end{center}
+
+% \begin{center}
+%     \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Linear_Regression_scipy} \\
+% \end{center}
+
+% Результаты получились аналогичными тем, что были найдены аналитически и при помощи \high{numpy}.
+
+% \paragraph*{{Полиномиальная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
+% \addcontentsline{toc}{paragraph}{\protect\numberline{}Полиномиальная регрессия}
+
+% Реализуем нахождение коэффициентов модели при помощи библиотеки scipy:
+
+% \begin{center}
+%     \begin{lstlisting}[language=Python]
+% X = np.array([np.ones(n_), 
+%               np.array(x_values_), 
+%               np.array(x_values_)**2, 
+%               np.array(x_values_)**3]).T
+% Y = np.array(y_values_).T
+% polynomial_scipy_beta = sp.linalg.inv((X.T @ X)) @ X.T @ Y
+
+% polynomial_scipy_beta
+%     \end{lstlisting}
+% \end{center}
+
+% Получим:
+
+% \begin{equation*}
+%     \begin{vmatrix}
+%         0.5933036 \\
+%         1.196875 \\
+%         -0.0933036 \\
+%         0.003125
+%     \end{vmatrix}
+% \end{equation*}
+
+% Построим график:
+
+% \begin{center}
+%     \begin{lstlisting}[language=Python]
+% polynomial_scipy_func = lambda x: polynomial_scipy_beta[0] + \
+%                                   polynomial_scipy_beta[1] * x + \
+%                                   polynomial_scipy_beta[2] * x**2 + \
+%                                   polynomial_scipy_beta[3] * x**3
+
+% new_x_values = np.linspace(0, x_values_[-1] + 3, 100)
+% new_y_values = polynomial_scipy_func(new_x_values)
+
+% y_values_polynomial_scipy = new_y_values
+
+% buildBar('Polynomial_Regression_scipy', 
+%          '$\\hat{y}$', 
+%          'Polynomial regression (using OLS, n=3) with scipy', 
+%          x_values_, 
+%          y_values_, 
+%          new_x_values, 
+%          new_y_values)
+%     \end{lstlisting}
+% \end{center}
+
+% \begin{center}
+%     \includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Polynomial_Regression_scipy} \\
+% \end{center}
+
+% Результаты также получились аналогичными тем, что были найдены аналитически и при помощи \high{numpy}.
 
 \subsection*{{Часть 6}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 6}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 6}
 
 Сравнить решения, полученные вручную и с помощью решения на python, построить решения графически.  
 Оценить точность полученных решений.
 
 \subsubsection*{{Построение совмещенных графиков}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Построение совмещенных графиков}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Построение совмещенных графиков}
 
 Графики изобразим с разной толщиной, чтобы было видно как они накладываются друг на друга.
 
 \paragraph*{{Линейная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{paragraph}{Линейная регрессия}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Линейная регрессия}
 
 Построим графики:
 
@@ -923,41 +1319,39 @@ def buildBar(filename):
                color=RED,
                s=50,
                label='Initial data',
-               zorder=5)
+               zorder=7)
 
     universal_x_values = np.linspace(0, x_values_[-1] + 3, 100)
 
-    ax.plot(universal_x_values, 
-            y_values_hand_approximation, 
-            linestyle=':', l
-            inewidth=2, 
-            color='black', 
-            label='Hand Approximation', 
-            zorder=4)
-    ax.plot(universal_x_values, 
-            y_values_linear_analytical, 
-            linewidth=10, 
-            label='Analytical Linear Regression', 
-            zorder=1)
+    ax.plot(universal_x_values, y_values_hand_approximation, 
+            linestyle=':', linewidth=2, 
+            color='black', label='Hand Approximation', zorder=6)
+    ax.plot(universal_x_values, y_values_linear_analytical, 
+            linewidth=20, 
+            label='Analytical Linear Regression', zorder=1)
     ax.plot(universal_x_values, 
             y_values_linear_numpy, 
-            linewidth=5, 
-            label='Linear Regression (numpy)', 
-            zorder=2)
+            linewidth=15, 
+            label='Linear Regression (numpy)', zorder=2)
     ax.plot(universal_x_values, 
-            y_values_linear_scipy, 
+            y_values_linear_scipy_linregress, 
+            linewidth=10, 
+            label='Linear Regression (scipy linregress)', zorder=3)
+    ax.plot(universal_x_values, 
+            y_values_linear_scipy_least_squares, 
+            linewidth=5, 
+            label='Linear Regression (scipy least_squares)', zorder=4)
+    ax.plot(universal_x_values, 
+            y_values_linear_scipy_lstsq, 
             linewidth=1, 
-            label='Linear Regression (scipy)', 
-            zorder=3)
+            label='Linear Regression (scipy lstsq)', zorder=5)
 
     plt.grid(linestyle='-', linewidth=0.25)
 
     ax.set_title('Combined Linear plots')
     decorate_plot(ax, np.arange(universal_x_values[0], 
                                 universal_x_values[-1]+1, 1), 
-                                'x', 
-                                'y', 
-                                loc=(0.005, 0.725))
+                                'x', 'y', loc=(0.005, 0.725))
     
     if SAVE_PLOTS:
         plt.savefig(f'images/{filename}.png', dpi=300, transparent=True)
@@ -976,7 +1370,7 @@ buildBar('Combined_Linear_Plots')
 идеально наложились друг на друга. График, построенный вручную слегка смещен.
 
 \paragraph*{{Полиномиальная регрессия}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{paragraph}{Полиномиальная регрессия}
+\addcontentsline{toc}{paragraph}{\protect\numberline{}Полиномиальная регрессия}
 
 Построим графики:
 
@@ -990,32 +1384,25 @@ def buildBar(filename):
                color=RED,
                s=50,
                label='Initial data', 
-               zorder=4)
+               zorder=5)
 
     universal_x_values = np.linspace(0, x_values_[-1] + 3, 100)
 
-    ax.plot(universal_x_values, 
-            y_values_polynomial_analytical, 
-            linewidth=10, 
-            label='Analytical Polynomial Regression', 
-            zorder=1)
-    ax.plot(universal_x_values, 
-            y_values_polynomial_numpy, 
-            linewidth=5, 
-            label='Polynomial Regression (numpy)', 
-            zorder=2)
-    ax.plot(universal_x_values, 
-            y_values_polynomial_scipy, 
-            linewidth=1, 
-            label='Polynomial Regression (scipy)', 
-            zorder=3)
+    ax.plot(universal_x_values, y_values_polynomial_analytical, 
+            linewidth=15, label='Analytical Polynomial Regression', zorder=1)
+    ax.plot(universal_x_values, y_values_polynomial_numpy, 
+            linewidth=10, label='Polynomial Regression (numpy)', zorder=2)
+    ax.plot(universal_x_values, y_values_polynomial_scipy_least_squares, 
+            linewidth=5, label='Polynomial Regression (scipy least_squares)', zorder=3)
+    ax.plot(universal_x_values, y_values_polynomial_scipy_lstsq, 
+            linewidth=1, label='Polynomial Regression (scipy lstsq)', zorder=4)
 
     plt.grid(linestyle='-', linewidth=0.25)
 
     ax.set_title('Combined Polynomial plots')
     decorate_plot(ax, np.arange(universal_x_values[0], 
-                                universal_x_values[-1]+1, 1), 'x', 'y', loc=(0.005, 
-                                                                             0.75))
+                                universal_x_values[-1]+1, 1), 
+                                'x', 'y', loc=(0.005, 0.75))
     
     if SAVE_PLOTS:
         plt.savefig(f'images/{filename}.png', dpi=300, transparent=True)
@@ -1034,56 +1421,97 @@ buildBar('Combined_Polynomial_Plots')
 идеально наложились друг на друга.
 
 \subsubsection*{{Сравнение коэффициентов}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Сравнение коэффициентов}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Сравнение коэффициентов}
 
 Вычтем коэффициенты для линейных и полиномиальных моделей, полученные разными способами 
 друг из друга и найдём среднее значение векторов:
 
 \begin{center}
     \begin{lstlisting}[language=Python]
+@dataclass
+class Regression:
+    name: str
+    value: np.array
+
 print(np.mean(y_values_hand_approximation-y_values_linear_analytical))
 print(np.mean(y_values_hand_approximation-y_values_linear_numpy))
-print(np.mean(y_values_hand_approximation-y_values_linear_scipy))
+print(np.mean(y_values_hand_approximation-y_values_linear_scipy_linregress))
+print(np.mean(y_values_hand_approximation-y_values_linear_scipy_least_squares))
+print(np.mean(y_values_hand_approximation-y_values_linear_scipy_lstsq))
 
 print('-'*200)
 
-print(np.mean(y_values_linear_analytical-y_values_linear_numpy))
-print(np.mean(y_values_linear_numpy-y_values_linear_scipy))
-print(np.mean(y_values_linear_scipy-y_values_linear_analytical))
+linear = [
+    Regression('y_values_linear_analytical', y_values_linear_analytical), 
+    Regression('y_values_linear_numpy', y_values_linear_numpy),
+    Regression('y_values_linear_scipy_linregress', y_values_linear_scipy_linregress),
+    Regression('y_values_linear_scipy_least_squares', y_values_linear_scipy_least_squares),
+    Regression('y_values_linear_scipy_lstsq', y_values_linear_scipy_lstsq)
+]
+
+pairs = list(itertools.combinations(linear, 2))
+for pair in pairs:
+    diff = np.mean(np.abs(pair[0].value - pair[1].value))
+    print(f'{pair[0].name:<39} && {pair[1].name:<40}: {diff}')
 
 print('-'*200)
 
-print(np.mean(y_values_polynomial_analytical-y_values_polynomial_numpy))
-print(np.mean(y_values_polynomial_numpy-y_values_polynomial_scipy))
-print(np.mean(y_values_polynomial_scipy-y_values_polynomial_analytical))
+polynomial = [
+    Regression('y_values_polynomial_analytical', y_values_polynomial_analytical), 
+    Regression('y_values_polynomial_numpy', y_values_polynomial_numpy),
+    Regression('y_values_polynomial_scipy_least_squares', y_values_polynomial_scipy_least_squares),
+    Regression('y_values_polynomial_scipy_lstsq', y_values_polynomial_scipy_lstsq)
+]
+
+pairs = list(itertools.combinations(polynomial, 2))
+for pair in pairs:
+    diff = np.mean(np.abs(pair[0].value - pair[1].value))
+    print(f'{pair[0].name:<39} && {pair[1].name:<40}: {diff}')
     \end{lstlisting}
 \end{center}
 
+\newpage
 Получим:
 
 \begin{gather*}
-    0.017807351077313804\\
-    0.017807351077314702\\
-    0.017807351077314702\\[2em]
-    9.01501095995627e-16\\
-    0.0\\
-    -9.01501095995627e-16\\[2em]
-    1.29910158852553e-9\\
-    -9.558054347991174e-12\\
-    -1.28954353417754e-9\\
+    0.017807351077313804 \\[0.2em]
+    0.017807351077314702 \\[0.2em]
+    0.017807351077313925 \\[0.2em]
+    0.01780735301229668 \\[0.2em]
+    0.017807351077313804 \\[0.2em]
 \end{gather*}
+\vspace{-50pt}
+\begin{alignat*}{2}
+    &\| \text{y\_values\_linear\_analytical} - \text{y\_values\_linear\_numpy} \| &&= 9.637 \times 10^{-16} \\
+    &\| \text{y\_values\_linear\_analytical} - \text{y\_values\_linear\_scipy\_linregress} \| &&= 9.948 \times 10^{-16} \\
+    &\| \text{y\_values\_linear\_analytical} - \text{y\_values\_linear\_scipy\_least\_squares} \| &&= 2.984 \times 10^{-9} \\
+    &\| \text{y\_values\_linear\_analytical} - \text{y\_values\_linear\_scipy\_lstsq} \| &&= 0.0 \\
+    &\| \text{y\_values\_linear\_numpy} - \text{y\_values\_linear\_scipy\_linregress} \| &&= 7.772 \times 10^{-16} \\
+    &\| \text{y\_values\_linear\_numpy} - \text{y\_values\_linear\_scipy\_least\_squares} \| &&= 2.984 \times 10^{-9} \\
+    &\| \text{y\_values\_linear\_numpy} - \text{y\_values\_linear\_scipy\_lstsq} \| &&= 9.637 \times 10^{-16} \\
+    &\| \text{y\_values\_linear\_scipy\_linregress} - \text{y\_values\_linear\_scipy\_least\_squares} \| &&= 2.984 \times 10^{-9} \\
+    &\| \text{y\_values\_linear\_scipy\_linregress} - \text{y\_values\_linear\_scipy\_lstsq} \| &&= 9.948 \times 10^{-16} \\
+    &\| \text{y\_values\_linear\_scipy\_least\_squares} - \text{y\_values\_linear\_scipy\_lstsq} \| &&= 2.984 \times 10^{-9} \\
+    \intertext{-------------------------------------------------------------------------------------------------------------------------------------}
+    &\| \text{y\_values\_polynomial\_analytical} - \text{y\_values\_polynomial\_numpy} \| &&= 1.298 \times 10^{-9} \\
+    &\| \text{y\_values\_polynomial\_analytical} - \text{y\_values\_polynomial\_scipy\_least\_squares} \| &&= 1.290 \times 10^{-9} \\
+    &\| \text{y\_values\_polynomial\_analytical} - \text{y\_values\_polynomial\_scipy\_lstsq} \| &&= 1.290 \times 10^{-9} \\
+    &\| \text{y\_values\_polynomial\_numpy} - \text{y\_values\_polynomial\_scipy\_least\_squares} \| &&= 8.824 \times 10^{-12} \\
+    &\| \text{y\_values\_polynomial\_numpy} - \text{y\_values\_polynomial\_scipy\_lstsq} \| &&= 8.602 \times 10^{-12} \\
+    &\| \text{y\_values\_polynomial\_scipy\_least\_squares} - \text{y\_values\_polynomial\_scipy\_lstsq} \| &&= 2.591 \times 10^{-13}
+\end{alignat*}
 
 Что говорит о том, что погрешность вычисления коэффициентов разными способами пренебрежительно мала.
 
 \newpage
 
 \subsection*{{Часть 7}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsection}{Часть 7}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Часть 7}
 
 С помощью полученной модели предсказать значения y для значений x = 4,5; x = 5.
 
 \subsubsection*{{Предсказание}}\vspace{-20pt}\rule{\linewidth}{0.1mm}
-\addcontentsline{toc}{subsubsection}{Предсказание}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}Предсказание}
 
 Подставим x = 4,5; x = 5 в каждую из моделей:
 
@@ -1093,22 +1521,48 @@ print(np.mean(y_values_polynomial_scipy-y_values_polynomial_analytical))
 class Func:
     name: str
     func: Callable
+    args: tuple = ()
+    kwargs: dict = None
+
+    def execute(self, x):
+        if self.kwargs is None:
+            self.kwargs = {}
+        if len(self.args) == 4:
+            return self.func(x, self.args, **self.kwargs)
+        else:
+            return self.func(x, *self.args, **self.kwargs)
 
 funcs = [
-    Func('Hand approximation',               hand_func),
-    Func('Linear Analytical Regression',     linear_analytical_func),
-    Func('Polynomial Analytical Regression', polynomial_analytical_func),
-    Func('Linear Regression (numpy)',        linear_numpy_func),
-    Func('Polynomial Regression (numpy)',    polynomial_numpy_func),
-    Func('Linear Regression (scipy)',        linear_scipy_func),
-    Func('Polynomial Regression (scipy)',    polynomial_scipy_func)
+    Func('Hand approximation',                          
+         hand_func),
+    Func('Linear Analytical Regression',                
+         linear_analytical_func),
+    Func('Polynomial Analytical Regression',            
+         polynomial_analytical_func),
+    Func('Linear Regression (numpy)',                   
+         linear_numpy_func),
+    Func('Polynomial Regression (numpy)',               
+         polynomial_numpy_func),
+    Func('Linear Regression (scipy linregress)',        
+         linear_scipy_func, args=(linregressResult.intercept, 
+                                  linregressResult.slope)),
+    Func('Linear Regression (scipy least_squares)',     
+         linear_scipy_func, args=((res_linear_lsq.x[0],
+                                   res_linear_lsq.x[1]))),
+    Func('Linear Regression (scipy lstsq)',             
+         linear_scipy_func, args=((p_linear[0],
+                                   p_linear[1]))),
+    Func('Polynomial Regression (scipy least_squares)', 
+         polynomial_scipy_func, args=(res_polynomial_lsq.x)), 
+    Func('Polynomial Regression (scipy lstsq)',         
+         polynomial_scipy_func, args=(p_polynomial))
 ]
 
 x_data = [4.5, 5]
 
 for func in funcs:
     for x in x_data:
-        print(f'Calculating x = {x} with {func.name}, result: {func.func(x)}')
+        print(f'Calculating x = {x:<5} with {func.name + ",":<44} result: {func.execute(x)}')
     \end{lstlisting}
 \end{center}
 
@@ -1119,15 +1573,18 @@ for func in funcs:
     \renewcommand{\arraystretch}{1.5} % Increase the vertical space between rows
     \begin{tabular}{lcc}
     \toprule
-    \textbf{Method} & \textbf{Result for \( x = 4.5 \)} & \textbf{Result for \( x = 5 \)} \\
+    \textbf{Method} & \textbf{\( x = 4.5 \)} & \textbf{\( x = 5 \)} \\
     \midrule
-    Hand approximation & 4.270342205323194 & 4.460456273764259 \\
-    Linear Analytical Regression & 4.298333333333333 & 4.481904761904762 \\
-    Polynomial Analytical Regression & 4.37460937545060 & 4.63571428619517 \\
-    Linear Regression (numpy) & 4.298333333333332 & 4.481904761904761 \\
-    Polynomial Regression (numpy) & 4.374609374991685 & 4.635714285706156 \\
-    Linear Regression (scipy) & 4.298333333333332 & 4.481904761904761 \\
-    Polynomial Regression (scipy) & 4.374609375000244 & 4.6357142857146165 \\
+    Hand approximation & 4.27034 & 4.46046 \\
+    Linear Analytical Regression & 4.29833 & 4.48190 \\
+    Polynomial Analytical Regression & 4.37461 & 4.63571 \\
+    Linear Regression (numpy) & 4.29833 & 4.48190 \\
+    Polynomial Regression (numpy) & 4.37461 & 4.63571 \\
+    Linear Regression (scipy linregress) & 4.29833 & 4.48190 \\
+    Linear Regression (scipy least\_squares) & 4.29833 & 4.48190 \\
+    Linear Regression (scipy lstsq) & 4.29833 & 4.48190 \\
+    Polynomial Regression (scipy least\_squares) & 4.37461 & 4.63571 \\
+    Polynomial Regression (scipy lstsq) & 4.37461 & 4.63571 \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -1141,21 +1598,21 @@ def buildBar(filename):
     _, ax = plt.subplots(figsize=(10, 6))
 
     # initial data
-    ax.scatter(x_values_, 
-               y_values_, 
+    ax.scatter(x_values_,
+               y_values_,
                color=RED,
                s=50,
-               label='Initial data', 
+               label='Initial data',
                zorder=2)
 
     # analytical polynomial regression
     universal_x_values = np.linspace(0, x_values_[-1] + 3, 100)
 
-    ax.plot(universal_x_values, 
+    ax.plot(universal_x_values,
             y_values_polynomial_analytical,
-            linewidth=2, 
-            label='Analytical Polynomial Regression', 
-            zorder=1, 
+            linewidth=2,
+            label='Analytical Polynomial Regression',
+            zorder=1,
             color=RICH_BLACK)
 
     # predicted values
@@ -1165,40 +1622,37 @@ def buildBar(filename):
         "Analytical Polynomial Regression",
         "Linear Regression (numpy)",
         "Polynomial Regression (numpy)",
-        "Linear Regression (scipy)",
-        "Polynomial Regression (scipy)",
+        "Linear Regression (scipy linregress)",
+        "Linear Regression (scipy least_squares)",
+        "Linear Regression (scipy lstsq)",
+        "Polynomial Regression (scipy least_squares)",
+        "Polynomial Regression (scipy lstsq)",
     ]
 
     x_values = [4.5, 5]
     results = {
         "Hand approximation": [4.270342205323194, 4.460456273764259],
         "Analytical Linear Regression": [4.298333333333333, 4.481904761904762],
-        "Analytical Polynomial Regression": [4.37460937545060, 4.63571428619517],
+        "Analytical Polynomial Regression": [4.37460937545089, 4.63571428619550],
         "Linear Regression (numpy)": [4.298333333333332, 4.481904761904761],
         "Polynomial Regression (numpy)": [4.374609374991685, 4.635714285706156],
-        "Linear Regression (scipy)": [4.298333333333332, 4.481904761904761],
-        "Polynomial Regression (scipy)": [4.374609375000244, 4.6357142857146165],
+        "Linear Regression (scipy linregress)": [4.298333333333334, 4.481904761904762],
+        "Linear Regression (scipy least_squares)": [4.298333329122352, 4.481904758018923],
+        "Linear Regression (scipy lstsq)": [4.298333333333333, 4.481904761904762],
+        "Polynomial Regression (scipy least_squares)": [4.374609375000068, 4.635714285714329],
+        "Polynomial Regression (scipy lstsq)": [4.374609375000143, 4.6357142857144185],
     }
 
     i = 3
     for method in methods:
-        plt.scatter(x_values, 
-                    results[method], 
-                    label=method, 
-                    s=50 + 100 * (i-2), 
-                    zorder=12-i)
-        print(50 + 25 * (i-2), 12-i)
+        plt.scatter(x_values, results[method], label=method, s=50 + 100 * (i-2), zorder=12-i)
         i += 1
 
     plt.grid(linestyle='-', linewidth=0.25)
 
     ax.set_title('Prediction')
-    decorate_plot(ax, np.arange(universal_x_values[0], 
-                                universal_x_values[-1]+1, 1), 
-                                'x', 
-                                'y', 
-                                loc=(0.005, 0.6))
-    
+    decorate_plot(ax, np.arange(universal_x_values[0], universal_x_values[-1]+1, 1), 'x', 'y', loc=(0.55, 0.1))
+
     if SAVE_PLOTS:
         plt.savefig(f'images/{filename}.png', dpi=300, transparent=True)
 
